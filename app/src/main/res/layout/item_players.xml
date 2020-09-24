@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="players"
+            type="com.sportsinteractive.cricket.model.Players" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvPlayersName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@{players.Name_Full}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSpecialStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/orange"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvPlayersName"
+            app:layout_constraintStart_toEndOf="@id/tvPlayersName"
+            app:layout_constraintTop_toTopOf="@id/tvPlayersName"
+            app:showCaptain="@{players.Iscaptain}"
+            app:showWicketK="@{players.Iscaptain}" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/light_blue"
+            app:layout_constraintTop_toBottomOf="@id/tvPlayersName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
